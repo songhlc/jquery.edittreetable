@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>无标题</title>
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<style>
+		.treetable{
+
+		}
+		.treetable .fa{
+			cursor: pointer;
+			padding-right: 5px;
+		}
+		.treetable .rowhidden{
+			display: none;
+		}
+		.treetable .j-addChild{
+			display: none;
+		}
+		.treetable .selected .j-addChild{
+			display: block;
+		}
+		.treetable .btn-outline{
+			background-color: transparent;
+		}
+		.treetable .form-control{
+			width: auto;
+			display: inline-block;
+		}
+		.treetable .textalign-center{
+			text-align: center;
+		}
+		.treetable .j-expend{
+			cursor: pointer;
+			width: 35% !important;
+			text-align: left !important;
+		}
+		.treetable .maintitle{
+			width: 35% !important;
+		}
+		.treetable .j-remove{
+			padding: 8px;
+			cursor: pointer;
+			font-size: 16px;
+			color:red;
+		}
+		.treetable .tt-header{
+			margin-top:10px;
+		}
+		.treetable .class-level-2 .class-level-ul .j-expend{
+			position: relative;
+			left: 22px;
+		}
+		.treetable .class-level-3 .class-level-ul .j-expend{
+			position: relative;
+			left: 44px;
+		}
+		.treetable .class-level-4 .class-level-ul .j-expend{
+			position: relative;
+			left: 66px;
+		}
+		.treetable .class-level-1 {
+			border-bottom: dashed 1px #eee;
+		}
+		.treetable .class-level-ul{
+			padding: 0;
+			margin-bottom: 2px;
+		}
+		.treetable .class-level-ul li {
+			float: left;
+			text-align: center;
+			vertical-align: middle;
+			padding: 1px 10px;
+			min-width: 120px;
+			list-style: none;
+		}
+		.treetable .class-level-ul:after {
+			display: block;
+			clear: both;
+			height: 0;
+			content: "\0020";
+		}
+		.treetable .tt-header div span {
+			width: auto;
+			line-height: 29px;
+			display: inline-block;
+			min-width: 120px;
+			text-align: center;
+		}
+		.treetable .tt-body{
+			border: solid 1px #DDD;
+			padding-top: 1px;
+			background-color:#FFF;
+		}
+		.treetable .tt-header div{
+			border: solid 1px #DDD;
+			border-bottom:none;
+			background-color:#FFF;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h5>单列维护树表</h5>
+		<div id="bs-treeetable" class="treetable">
+			加载数据中...
+		</div>
+		<br>
+		<h5>多列树表维护</h5>
+		<div id="bs-ml-treetable" class="treetable">
+			加载数据中...
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="jquery.edittreetable.js"></script>
+	<script type="text/javascript">
+	var data = [{
+		id:1,name:"用友网络科技股份有限公司",pid:0,innercode:"1A"
+	},
+	{
+		id:2,name:"云应用孵化中心",pid:1,innercode:"1A2A"
+	},
+	{
+		id:6,name:"云应用孵化中心",pid:1,innercode:"1A3A"
+	},
+	{
+		id:4,name:"云应用孵化中心",pid:2,innercode:"1A4A"
+	},
+	{
+		id:5,name:"云应用孵化中心",pid:4,innercode:"1A5A"
+	},
+	{
+		id:3,name:"阿里巴巴国内事业部",pid:0,innercode:"1A6A"
+	}];
+	/*目前默认最大层级是四级（不包含根节点）*/
+	$("#bs-treeetable").bstreetable({
+		data:data,
+		maintitle:"公司名称",
+		nodeaddCallback:function(data,callback){
+			alert(JSON.stringify(data));
+			//do your things then callback 新增的时候会返回一个字段叫pinnercode,表示父节点的innercode
+			callback({id:18,name:data.name,innercode:"ttttt",pid:data.pid});
+		},
+		noderemoveCallback:function(data,callback){
+			alert(JSON.stringify(data));
+			//do your things then callback
+			callback();
+		},
+		nodeupdateCallback:function(data,callback){
+			alert(JSON.stringify(data));
+			//do your things then callback
+			callback();
+		}
+	}
+	);
+
+	$("#bs-ml-treetable").bstreetable({
+		data:data,
+		maintitle:"公司名称",
+		nodeaddCallback:function(data,callback){
+			alert(JSON.stringify(data));
+			//do your things then callback 新增的时候会返回一个字段叫pinnercode,表示父节点的innercode
+			callback({id:18,name:data.name,innercode:"ttttt",pid:data.pid});
+		},
+		noderemoveCallback:function(data,callback){
+			alert(JSON.stringify(data));
+			//do your things then callback
+			callback();
+		},
+		nodeupdateCallback:function(data,callback){
+			alert(JSON.stringify(data));
+			//do your things then callback
+			callback();
+		},
+		extfield:[
+			{title:"innercode",key:"innercode",type:"input"}
+		]//{title:"列名",key:"",type:"input"} input表示是输入框
+	})
+	</script>
+</body>
+</html>
