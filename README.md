@@ -11,13 +11,14 @@
 ####[demo地址](https://github.com/songhlc/bootstrap-treeselect/tree/master/examples/example.html)
 
 ###使用方式(单字段维护)
-- data:树形数据
-- maintitle:字段名称
-- nodeupdateCallback:function(data,callback):节点更新回调函数
-- nodeaddCallback(data,callback):节点添加回调函数(添加的数据,回调函数)
-- noderemoveCallback(data,callback):节点删除回调函数
-###code
 
+* data:树形数据
+* maintitle:字段名称
+* nodeupdateCallback:function(data,callback):节点更新回调函数
+* nodeaddCallback(data,callback):节点添加回调函数(添加的数据,回调函数)
+* noderemoveCallback(data,callback):节点删除回调函数
+
+###code
     $("#bs-treeetable").bstreetable({
         data:data,
         maintitle:"公司名称",
@@ -65,6 +66,7 @@
 
 ###多字段维护
 配置中添加参数
+
 - title:列名
 - type:input表示输入框(目前只支持简单输入框)
 - key:对应数据中的字段
