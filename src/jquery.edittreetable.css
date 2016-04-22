@@ -1,0 +1,93 @@
+.treetable{
+
+}
+.treetable .fa{
+    cursor: pointer;
+    padding-right: 5px;
+}
+.treetable .rowhidden{
+    display: none;
+}
+.treetable .j-addChild{
+    display: none;
+}
+.treetable .selected .j-addChild{
+    display: block;
+}
+.treetable .btn-outline{
+    background-color: transparent;
+}
+.treetable .form-control{
+    width: auto;
+    display: inline-block;
+}
+.treetable .textalign-center{
+    text-align: center;
+}
+.treetable .j-expend{
+    cursor: pointer;
+    width: 35% !important;
+    text-align: left !important;
+}
+.treetable .maintitle{
+    width: 35% !important;
+}
+.treetable .j-remove{
+    padding: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color:red;
+}
+.treetable .tt-header{
+    margin-top:10px;
+}
+.treetable .class-level-2 .class-level-ul .j-expend{
+    position: relative;
+    left: 22px;
+}
+.treetable .class-level-3 .class-level-ul .j-expend{
+    position: relative;
+    left: 44px;
+}
+.treetable .class-level-4 .class-level-ul .j-expend{
+    position: relative;
+    left: 66px;
+}
+.treetable .class-level-1 {
+    border-bottom: dashed 1px #eee;
+}
+.treetable .class-level-ul{
+    padding: 0;
+    margin-bottom: 2px;
+}
+.treetable .class-level-ul li {
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1px 10px;
+    min-width: 120px;
+    list-style: none;
+}
+.treetable .class-level-ul:after {
+    display: block;
+    clear: both;
+    height: 0;
+    content: "\0020";
+}
+.treetable .tt-header div span {
+    width: auto;
+    line-height: 29px;
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+}
+.treetable .tt-body{
+    border: solid 1px #DDD;
+    padding-top: 1px;
+    background-color:#FFF;
+}
+.treetable .tt-header div{
+    border: solid 1px #DDD;
+    border-bottom:none;
+    background-color:#FFF;
+}
