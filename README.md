@@ -17,6 +17,7 @@
 - noderemoveCallback(data,callback):节点删除回调函数
 - nodeupdateCallback:function(data,callback):节点更新回调函数
 
+
     $("#bs-treeetable").bstreetable({
         data:data,
         maintitle:"公司名称",
@@ -33,6 +34,7 @@
 	        callback();
         }
     });
+
 
 ###对应data数据格式(data format)
 注意按照pid升序排序(data order by pid asc)
