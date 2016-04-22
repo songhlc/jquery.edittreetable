@@ -13,10 +13,10 @@
 ###使用方式(单字段维护)
 - data:树形数据
 - maintitle:字段名称
+- nodeupdateCallback:function(data,callback):节点更新回调函数
 - nodeaddCallback(data,callback):节点添加回调函数(添加的数据,回调函数)
 - noderemoveCallback(data,callback):节点删除回调函数
-- nodeupdateCallback:function(data,callback):节点更新回调函数
-
+###code
 
     $("#bs-treeetable").bstreetable({
         data:data,
@@ -66,13 +66,14 @@
 ###多字段维护
 配置中添加参数
 - title:列名
-- key:对应数据中的字段
 - type:input表示输入框(目前只支持简单输入框)
+- key:对应数据中的字段
 
      extfield:[		      
-     {
-         title:"innercode",
-         key:"innercode",
-         type:"input"}
+         {
+            title:"innercode",
+            key:"innercode",
+            type:"input"
+         }
      ]
 
