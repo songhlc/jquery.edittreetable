@@ -19,6 +19,7 @@
 * noderemoveCallback(data,callback):节点删除回调函数
 
 ###code
+
     $("#bs-treeetable").bstreetable({
         data:data,
         maintitle:"公司名称",
@@ -71,6 +72,7 @@
 - type:input表示输入框(目前只支持简单输入框)
 - key:对应数据中的字段
 
+
      extfield:[		      
          {
             title:"innercode",
@@ -78,4 +80,5 @@
             type:"input"
          }
      ]
+
 
