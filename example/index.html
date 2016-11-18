@@ -158,6 +158,16 @@
 			alert(JSON.stringify(data));
 			//do your things then callback
 			callback();
+		},
+		nodeaddcheck:function(id,callback){
+			console.log(id);
+			if(id>0){
+				console.log("ok");
+				//如果允许就调用callback
+				callback();
+			} else{
+				console.log("error");
+			}
 		}
 	}
 	);
