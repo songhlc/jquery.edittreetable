@@ -241,17 +241,19 @@
         }
         function toggleicon(toggleElement){
             var _element = toggleElement.find(".fa");
+            var _elementMinus = toggleElement.parent().parent().find(".fa-minus");
             if(_element.hasClass("fa-plus")){
                 _element.removeClass("fa-plus").addClass("fa-minus");
                 toggleElement.parent().addClass("selected");
             }else{
                 _element.removeClass("fa-minus").addClass("fa-plus");
+                _elementMinus.removeClass("fa-minus").addClass("fa-plus");
                 toggleElement.parent().removeClass("selected")
             }
         }
         function toggleExpendStatus(curElement){
             if(curElement.find(".fa-minus").length>0){
-                curElement.parent().parent().find(".class-level").removeClass("rowhidden");
+                curElement.parent().parent().find(".class-level-" + (parseInt(curElement.parent().attr("data-level")) + 1)).removeClass("rowhidden");
             }
             else{
                 curElement.parent().parent().find(".class-level").addClass("rowhidden");
